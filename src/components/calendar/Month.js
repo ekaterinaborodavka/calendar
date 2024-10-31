@@ -2,7 +2,7 @@ import { daysOfWeek } from "../../constants";
 import { getDaysInMonth, getDaysInPreviousMonth, getFirstDayOfMonth } from "../../utils";
 import "./calendar.css";
 
-export const Month = ({ month }) => {
+export const Month = ({ month, events }) => {
   const { name, year } = month;
 
   const daysInMonth = getDaysInMonth(year, month.month);
@@ -21,6 +21,12 @@ export const Month = ({ month }) => {
     days.push({
       number: day,
       isCurrentMonth: true,
+      events: events.filter(
+        (event) =>
+          new Date(event.date).getFullYear() === year &&
+          new Date(event.date).getMonth() === month.month &&
+          new Date(event.date).getDate() === day
+      ),
     });
   }
 
@@ -36,8 +42,15 @@ export const Month = ({ month }) => {
       </div>
       <div className="days">
         {days.map((day, index) => (
-          <div className={`day ${!day.isCurrentMonth ? "prev" : "" }`} key={index}>
+          <div className={`day ${!day.isCurrentMonth ? "prev" : ""}`} key={index}>
             {day.number}
+            <div className="day-indicators">
+              {" "}
+              {day.events &&
+                day.events.map((event, eventIndex) => (
+                  <div key={eventIndex} className={`day-indicator ${event.type}`} />
+                ))}
+            </div>
           </div>
         ))}
       </div>

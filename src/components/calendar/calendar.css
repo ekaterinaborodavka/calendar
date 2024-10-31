@@ -53,6 +53,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+.day.indicators {
+  padding-bottom: 6px;
 }
 
 .month_name {
@@ -70,6 +74,10 @@
 .event {
   border-radius: 16px;
   padding: 4px 16px;
+}
+
+.checked.event {
+  color: black;
 }
 
 .meeting {
@@ -90,4 +98,48 @@
 .webinar {
   color: #4db4ff;
   background: #4db4ff29;
+}
+
+.checked.meeting {
+  background: #ff4e6b;
+}
+
+.checked.question-answer {
+  background: #00cc66;
+}
+
+.checked.conference {
+  background: #ffbb33;
+}
+
+.checked.webinar {
+  background: #4db4ff;
+}
+
+.day-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.day-indicator.meeting {
+  background: #FF4E6B;
+}
+
+.day-indicator.question-answer {
+  background: #00CC66;
+}
+
+.day-indicator.conference {
+  background: #ffbb33;
+}
+
+.day-indicator.webinar {
+  background: #4db4ff;
+}
+
+.day-indicators {
+  display: flex;
+  gap: 2px;
+  height: 6px;
 }
