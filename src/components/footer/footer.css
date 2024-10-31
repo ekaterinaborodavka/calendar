@@ -1,0 +1,25 @@
+.footer {
+    padding: 30px 0;
+}
+
+.logo {
+  color: #ff4e6b;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.navigation_list_item {
+  color: #fffafb;
+}
+
+.copy {
+  color: #797979;
+  font-size: 14px;
+}
