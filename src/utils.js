@@ -22,3 +22,11 @@ export const getFirstDayOfMonth = (year, month) => {
 export const getDaysInPreviousMonth = (year, month) => {
   return new Date(year, month, 0).getDate();
 };
+
+export const formatDate = (dateString) => {
+  const options = { day: "numeric", month: "long" };
+  const date = new Date(dateString);
+  const time = date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+
+  return `${date.toLocaleDateString("en-US", options)}, ${time}`;
+};

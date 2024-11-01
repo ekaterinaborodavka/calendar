@@ -19,12 +19,17 @@
   padding-bottom: 15px;
   border-bottom: 1px solid #ff4e6b29;
   border-top: 1px solid #ff4e6b29;
-  border-right: 1px solid #ff4e6b29;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
-.month:nth-child(3) {
+.month_content {
+  border-right: 1px solid #ff4e6b29;
+  margin: 10px 0;
+}
+.month:nth-child(3) .month_content {
   border-right: none;
 }
-.month:last-child {
+.month:last-child .month_content {
   border-right: none;
 }
 
@@ -116,30 +121,111 @@
   background: #4db4ff;
 }
 
-.day-indicator {
+.day_indicator {
   width: 6px;
   height: 6px;
   border-radius: 50%;
 }
 
-.day-indicator.meeting {
-  background: #FF4E6B;
+.day_indicator.meeting {
+  background: #ff4e6b;
 }
 
-.day-indicator.question-answer {
-  background: #00CC66;
+.day_indicator.question-answer {
+  background: #00cc66;
 }
 
-.day-indicator.conference {
+.day_indicator.conference {
   background: #ffbb33;
 }
 
-.day-indicator.webinar {
+.day_indicator.webinar {
   background: #4db4ff;
 }
 
-.day-indicators {
+.day_indicators {
   display: flex;
   gap: 2px;
   height: 6px;
+}
+
+.event_popup {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.event_popup_content {
+  background: black;
+  max-height: 510px;
+  overflow-y: auto;
+  padding: 24px;
+  width: 360px;
+}
+
+.event_popup_title {
+  font-size: 32px;
+  padding-bottom: 20px;
+}
+
+.event_item {
+  border-top: 1px solid #ff4e6b29;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.event_type_date {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event_item_title {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.event_item_description {
+  font-weight: 300;
+  font-size: 14px;
+  color: #fffafb;
+  text-align: left;
+}
+
+.event_item_location {
+  font-size: 16px;
+  color: #797979;
+  text-align: left;
+}
+
+.date {
+  background: black;
+}
+
+.add_event {
+  margin-top: 10px;
+  background: #ff4e6b;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin: 24px 0;
+}
+
+.button_wrapper {
+  display: flex;
+  justify-content: end;
+  border-top: 1px solid #ff4e6b29;
+}
+
+.noevents {
+  color: #ff4e6b;
+  margin-bottom: 30px;
 }

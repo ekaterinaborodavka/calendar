@@ -41,3 +41,11 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF4E6B;
+  border-radius: 50px;
+}
